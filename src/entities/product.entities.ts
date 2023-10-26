@@ -27,6 +27,8 @@ export class ProductEntity{
     })
     deleteAt:Date;
 
+    //!Hacer las relaciones de las columnas
+
     @Column('varchar', {
         name:'tittle',
         nullable: false,

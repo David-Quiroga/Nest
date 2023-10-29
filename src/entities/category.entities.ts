@@ -1,4 +1,5 @@
-import { BeforeInsert, BeforeUpdate, Column, CreateDateColumn, DeleteDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+import { BeforeInsert, BeforeUpdate, Column, CreateDateColumn, DeleteDateColumn, Entity, ManyToOne, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+import { ProductEntity } from "./product.entities";
 
 @Entity('category', {schema:'categoria'})
 export class CategoryEntity{
@@ -10,13 +11,11 @@ export class CategoryEntity{
         default: ()=> 'current_timestamp'
     })
     createAt:Date;
-
     @UpdateDateColumn({
         name: 'update_At',//nombre de la columna
         type: 'timestamp',
         default: ()=>'Current_timestamp',
     })
-
     updateAt:Date;
 
     @DeleteDateColumn({
@@ -25,6 +24,9 @@ export class CategoryEntity{
         nullable: true,
     })
     deleteAt:Date;
+
+    @ManyToOne(() => ProductEntity, (product) => product.category) 
+    product: ProductEntity
 
     @Column('varchar', {
         name: 'categoria',

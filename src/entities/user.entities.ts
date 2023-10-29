@@ -109,6 +109,7 @@ export class userEntity{
         }
         this.email = this.email.trim();
     }
+    
     @BeforeInsert()
     @BeforeUpdate()
     async setRol(){

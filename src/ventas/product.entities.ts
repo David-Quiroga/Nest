@@ -37,7 +37,7 @@ export class ProductEntity{
         comment:'Product Tittle'
     })
     tittle:string;
-    @Column('number', {
+    @Column('numeric', {
         name: 'price',
         nullable: false,
         comment: 'product price'

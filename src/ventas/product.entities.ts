@@ -32,12 +32,12 @@ export class ProductEntity{
     category: CategoryEntity[];
     
     @Column('varchar', {
-        name:'tittle',
+        name:'title',
         nullable: false,
-        comment:'Product Tittle'
+        comment:'Product Title'
     })
-    tittle:string;
-    @Column('numeric', {
+    title:string;
+    @Column('numeric', {//TODO se reemplaza el number por el numeric
         name: 'price',
         nullable: false,
         comment: 'product price'
@@ -49,7 +49,7 @@ export class ProductEntity{
         comment: 'product description'
     })
     description:string;
-    @Column('image',{
+    @Column('varchar',{
         name: 'image',
         nullable: true,
         comment: 'product image'
@@ -60,10 +60,10 @@ export class ProductEntity{
     @BeforeUpdate()
 
     async setTittle() {
-        if(!this.tittle){
+        if(!this.title){
             return
         }
-        this.tittle =  this.tittle.toUpperCase();
+        this.title =  this.title.toUpperCase();
     }
 
     

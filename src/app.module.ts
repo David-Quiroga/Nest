@@ -15,7 +15,7 @@ import { VentasService } from './ventas/ventas.service';
       host: 'localhost',
       port: 5432,
       username: 'postgres',
-      password: 'root',
+      password: 'Campos0430',//TODO la contraseña varia
       database: 'ventas',
       autoLoadEntities: true,
       synchronize: true,

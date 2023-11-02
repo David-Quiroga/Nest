@@ -1,7 +1,7 @@
 import { BeforeInsert, BeforeUpdate, Column, CreateDateColumn, DeleteDateColumn, Entity, ManyToOne, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 import { ProductEntity } from "./product.entities";
 
-@Entity('category', {schema:'categoria'})
+@Entity('category', {schema:'categoria'})//!El esquema es el que se crea en la base de datos
 export class CategoryEntity{
     @PrimaryGeneratedColumn('uuid')
     id:string;
